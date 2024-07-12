@@ -2,7 +2,7 @@ import './bootstrap';
 import '../css/app.css';
 
 import { createApp, h } from 'vue';
-import { createInertiaApp, Link } from '@inertiajs/vue3';
+import { createInertiaApp, Link, useForm } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import moment from 'moment';
