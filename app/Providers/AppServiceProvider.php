@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
+use App\Models\ApiKey;
+use App\Policies\ApiKeyPolicy;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,4 +24,5 @@ class AppServiceProvider extends ServiceProvider
     {
         Model::preventLazyLoading(config('app.env') !== 'production');
     }
+
 }

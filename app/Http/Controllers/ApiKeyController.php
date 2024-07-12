@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\ApiKey;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 
 class ApiKeyController extends Controller
 {
     public function index()
     {
-        $apiKeys = auth()->user()->apiKeys;
+        $apiKeys = Auth::user()->apiKeys;
         return Inertia::render('ApiKeys/Index', compact('apiKeys'));
     }
 
@@ -20,14 +21,14 @@ class ApiKeyController extends Controller
             'name' => 'required|string|max:255',
         ]);
 
-        auth()->user()->apiKeys()->create($request->only('name'));
+        Auth::user()->apiKeys()->create($request->only('name'));
 
         return redirect()->route('api-keys.index');
     }
 
     public function destroy(ApiKey $apiKey)
     {
-        $this->authorize('delete', $apiKey);
+
         $apiKey->delete();
 
         return redirect()->route('api-keys.index');
