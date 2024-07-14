@@ -10,8 +10,8 @@
       </Link>
     </template>
     <template #content>
-      <table class="table-auto">
-        <thead>
+      <table class="table-auto w-full">
+        <thead class="text-left">
           <tr>
             <th>#</th>
             <th>Titre</th>
@@ -21,7 +21,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(playlist, i) in playlists" :key="playlist.uuid">
+          <tr v-for="(playlist, i) in playlists" :key="playlist.uuid" class="mb-">
             <td>{{ i + 1 }}</td>
             <td>{{ playlist.title }}</td>
             <td>{{ playlist.tracks_count }} musiques</td>

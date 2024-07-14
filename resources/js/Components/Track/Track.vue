@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-sm rounded shadow-lg p-4" :class="{ 'border border-blue-500': active }">
     <div class="w-full">
-      <img :src="`/storage/${track.image}`" />
+      <img :src="`/storage/app/public/${track.image}`" />
     </div>
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">{{ track.title }}</div>
@@ -16,7 +16,7 @@
       Modifier
       </Link>
       <Link :href="route('tracks.destroy', { track: track })"
-        class="bg-red-600 hover:bg-red-700 text-white font-bold rounded py-2 px-4">
+        class="bg-red-600 hover:bg-red-700 text-white font-bold text-center rounded py-2 px-4">
       Supprimer
       </Link>
     </div>
