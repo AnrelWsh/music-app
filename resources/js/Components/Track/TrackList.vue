@@ -1,9 +1,8 @@
 <template>
   <div>
-    <input v-model="filter" type="search"
-      class="shadow border rounded py-2 px-3 text-gray-700 appearance-none leading-tight focus:outline-none focus:shadow-outline mb-5">
-
-    <div class="grid grid-cols-4 gap-4">
+    <input v-model="filter" type="search" placeholder="Rechercher"
+      class="w-full shadow border rounded py-2 px-3 text-gray-700 appearance-none leading-tight focus:outline-none focus:shadow-outline mb-5">
+    <div class="flex flex-col">
       <Track v-for="track in filteredTracks" :key="track.uuid" :track="track" :active="currentTrack === track.uuid"
         @played="play" />
     </div>
